@@ -3,11 +3,11 @@
 int main(){
 	
 	// Declaração de vareaveis:
-	int matrizA[2][3], matrizB[3][2], matrizSoma[3][3], i, j;
+	int matrizA[3][3], matrizB[3][3], matrizSoma[3][3], i, j;
 	
 	// Entrada de valores:
 	printf("Digite os elementos da matriz A:\n");
-	for (i = 0; i < 2; i++){
+	for (i = 0; i < 3; i++){
 		for (j = 0; j < 3; j++){
 			scanf("%d", &matrizA[i][j]);
 		}
