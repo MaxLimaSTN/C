@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void limpar_entrada(){
 
@@ -16,6 +17,7 @@ int main(){
 
     char nome1[50], nome2[50];
     int idade1, idade2;
+    double media;
 
     printf("Dados da primeira pessoa: \n");
     printf("Nome: ");
@@ -28,10 +30,12 @@ int main(){
     limpar_entrada();
     ler_texto(nome2, 50);
     printf("Idade: ");
-    scanf("%d", idade2);
+    scanf("%d", &idade2);
+    limpar_entrada();
 
-    printf("%d", idade1);
-    printf("%d", idade2);
+    media = (double)(idade1 + idade2) / 2;
+
+    printf("A idade media de %s e %s e de %.1lf anos\n", nome1, nome2, media);
 
     return 0;
 }
