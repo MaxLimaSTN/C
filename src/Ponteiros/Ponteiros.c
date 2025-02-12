@@ -1,29 +1,29 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <locale.h>
 
-int main() {
-	
-    int *numeros; 
-    int i;
+int main(){
 
-    numeros = (int*) malloc(10 * sizeof(int));
+    setlocale(LC_ALL, "Portugeses");
 
-    if (numeros == NULL) {
-        printf("Erro ao alocar memória.\n");
-        return 1;
-    }
+    int x = 10;
+    int *p;
+    int **pp;
+    int ***ppp;
 
-    for (i = 0; i < 10; i++) {
-        numeros[i] = 2 * (i + 1);
-    }
+    p = &x;
+    pp = &p;
+    ppp = &pp;
 
-    printf("Numeros pares no vetor:\n");
-    for (i = 0; i < 10; i++) {
-        printf("%d ", numeros[i]);
-    }
-    printf("\n");
-
-    free(numeros);
-
+    printf("Conteudo da variavel 'x': %d\n", x);
+    printf("Endereco da variavel 'x': %p\n", &x);
+    printf("Conteudo do Ponteiro 'p': %p\n", p);
+    printf("Endereco do Ponteiro 'p': %p\n", &p);
+    printf("Conteudo do Ponteiro 'pp': %p\n", pp);
+    printf("Endereco do Ponteiro 'pp': %p\n", &pp);
+    printf("Conteudo do Ponteiro 'ppp': %p\n", ppp);
+    printf("Endereco do Ponteiro 'ppp': %p\n", &ppp);
+    printf("Valor de 'x' apontado pelo Ponteiro 'ppp': %d\n", ***ppp);
+    
     return 0;
 }
