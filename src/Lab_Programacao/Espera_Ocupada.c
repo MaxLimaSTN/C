@@ -18,9 +18,8 @@ void* produtor(void* arg) {
             count++;
             sleep(1);
         } else {
-            // Espera ocupada
             printf("Buffer cheio. Produtor esperando...\n");
-            usleep(500000); // 0.5 segundos
+            usleep(500000); 
         }
     }
     return NULL;
@@ -35,9 +34,8 @@ void* consumidor(void* arg) {
             printf("Consumido: %d (posição %d)\n", item, count);
             sleep(2);
         } else {
-            // Espera ocupada
             printf("Buffer vazio. Consumidor esperando...\n");
-            usleep(500000); // 0.5 segundos
+            usleep(500000); 
         }
     }
     return NULL;
